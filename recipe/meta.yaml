@@ -1,5 +1,4 @@
-{% set version = "1.5-3" %}
-
+{% set version = '1.5-3' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: vars_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/vars_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/vars/vars_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/vars_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/vars/vars_{{ version }}.tar.gz
   sha256: 86afa75dff18f6b0d4c044d6fafde6f817e3e4732a0c8b10b029507a04da867d
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,6 +23,8 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-mass
     - r-lmtest >=0.9_26
@@ -39,7 +41,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('vars')"  # [not win]
+    - $R -e "library('vars')"           # [not win]
     - "\"%R%\" -e \"library('vars')\""  # [win]
 
 about:
@@ -49,8 +51,14 @@ about:
     error variance decomposition and impulse response functions of VAR models and estimation
     of SVAR and SVEC models.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
