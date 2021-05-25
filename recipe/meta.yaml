@@ -7,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: vars_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/vars_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vars/vars_{{ version }}.tar.gz
@@ -46,7 +45,7 @@ test:
 
 about:
   home: http://www.pfaffikus.de
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Estimation, lag selection, diagnostic testing, forecasting, causality analysis, forecast
     error variance decomposition and impulse response functions of VAR models and estimation
     of SVAR and SVEC models.
@@ -56,9 +55,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
