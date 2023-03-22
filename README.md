@@ -1,11 +1,11 @@
-About r-vars
-============
+About r-vars-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-vars-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.pfaffikus.de
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-vars-feedstock/blob/main/LICENSE.txt)
 
 Summary: Estimation, lag selection, diagnostic testing, forecasting, causality analysis, forecast error variance decomposition and impulse response functions of VAR models and estimation of SVAR and SVEC models.
 
