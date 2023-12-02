@@ -1,4 +1,4 @@
-{% set version = "1.5-9" %}
+{% set version = "1.6-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/vars_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vars/vars_{{ version }}.tar.gz
-  sha256: 285e5f9faee703f5f337d50bf4ba24524501910d1a0cffe7d1f77e0de2167cac
+  sha256: ed7feed9d787cbcbb6883ee8dddbd6ff1032526303dfe4f55e28a8690bec822d
 
 build:
   noarch: generic
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
