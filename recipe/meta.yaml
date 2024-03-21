@@ -1,4 +1,4 @@
-{% set version = "1.6-0" %}
+{% set version = "1.6-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/vars_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vars/vars_{{ version }}.tar.gz
-  sha256: ed7feed9d787cbcbb6883ee8dddbd6ff1032526303dfe4f55e28a8690bec822d
+  sha256: 9b3df03232fbedd30a89af10b20b540fce20ddd36602853857d47242d66f14c5
 
 build:
   noarch: generic
